@@ -44,3 +44,10 @@ function draw() {
         bval = bVal + 3;
     }
 }
+
+function keyPress() {
+    if (keyCode === 115 || keyCode === 83) {
+        saveCanvas('geometricPatterns', 'png');
+    }
+    return false;
+}
