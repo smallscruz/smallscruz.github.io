@@ -1,4 +1,4 @@
-var NUM_CIRCLES = 12;
+var NUM_CIRCLES = 10;
 
 var circleDiameter;
 var circleRadius;
@@ -10,28 +10,28 @@ var bval;
 function setup() {
     createCanvas(480, 600);
     
-    frameRate(5);
+    frameRate(20);
     
     circleDiameter = width/NUM_CIRCLES;
-    circleRadius = circleDiameter/2
+    circleRadius = circleDiameter/9
     
-    rVal = 255;
-    gVal = 0;
-    bVal = 0;
+    rVal = 150;
+    gVal = 255;
+    bVal = 200;
 }
 
 function draw() {
     var isShifted = false;
     
     var y = height;
-    while (y >= 0) {
+    while (y >= 10) {
         
         var x;
         
         if (isShifted) {
             x = circleRadius;
         } else {
-            x = 0;
+            x = 20;
         }
       
         while (x <= width) {
@@ -44,9 +44,9 @@ function draw() {
         y = y - circleRadius;
         isShifted = !isShifted;
         
-        rVal = (rVal + 254) % 256;
-        gVal = (gVal + 7) % 256;
-        bval = (bVal + 3) % 256;
+        rVal = (rVal + 100) % 256;
+        gVal = (gVal + 10) % 256;
+        bval = (bVal + 15) % 256;
     }
 }
 
