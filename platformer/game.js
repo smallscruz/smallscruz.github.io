@@ -24,6 +24,8 @@ function setup() {
         player = createSprite(100, height-75, 50, 50);
     }
     obstacleSprites = new Group();
+    player.rotationSpeed = 10.0;
+    
 }
 function draw() {
     if (isGameOver) {
@@ -53,7 +55,7 @@ function draw() {
         firstGroundSprite.position.x = firstGroundSprite.position.x +numGroundSprites*firstGroundSprite.width;
         groundSprites.add(firstGroundSprite);
     }
-    if (random() > 0.95) {
+    if (random() > 0.98) {
         var obstacle = createSprite(camera.position.x + width, random(0, (height-50)-15), 30, 30);
         obstacleSprites.add(obstacle);
     }
