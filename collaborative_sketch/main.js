@@ -9,12 +9,12 @@ var config = {
   
   var pointsData = firebase.database().ref();
   
-  var points = [];
+  var points = [20];
   
   function setup() {
-      var canvas = createCanvas(400, 400);
+      var canvas = createCanvas(1000, 1000);
       background(255);
-      fill(0);
+      fill(80, 70, 100);
       
       pointsData.on("child_added", function (point) {
           points.push(point.val());
@@ -28,17 +28,18 @@ var config = {
   }
   
   function draw() {
-      background(225);
+      background(0);
       
       for (var i = 0; i < points.length; i++) {
           var point = points[i];
-          ellipse(point.x, point.y, 5, 5);
+          fill(25, 100, 90);
+          ellipse(point.x, point.y, 5, 5)
       }
   }
   
   function drawPoint() {
       pointsData.push({x: mouseX, y: mouseY});
-  }
+      }
   
   function drawPointIfMousePressed() {
       if (mouseIsPressed) {
