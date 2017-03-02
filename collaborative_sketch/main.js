@@ -5,14 +5,18 @@ var config = {
     storageBucket: "collabrative-sketch.appspot.com",
     messagingSenderId: "1025968660513"
   };
+  var eraserWidth = 5;
+  var eraserHeight = 5;
+  
   firebase.initializeApp(config);
   
   var pointsData = firebase.database().ref();
   
-  var points = [20];
+  var points = [];
+  var currentTool = "pencil";
   
   function setup() {
-      var canvas = createCanvas(1000, 1000);
+      var canvas = createCanvas(1430, 785);
       background(255);
       fill(80, 70, 100);
       
@@ -32,7 +36,7 @@ var config = {
       
       for (var i = 0; i < points.length; i++) {
           var point = points[i];
-          fill(25, 100, 90);
+          fill("purple");
           ellipse(point.x, point.y, 5, 5)
       }
   }
