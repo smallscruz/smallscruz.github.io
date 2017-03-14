@@ -36,7 +36,7 @@ var config = {
       
       for (var i = 0; i < points.length; i++) {
           var point = points[i];
-          fill("purple");
+          fill("Aqua");
           ellipse(point.x, point.y, 5, 5)
       }
   }
